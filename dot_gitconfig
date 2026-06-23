@@ -1,2 +1,11 @@
 [gpg]
 	format = ssh
+[include]
+  path = ~/.my_git_config
+[gpg "ssh"]
+	allowedSignersFile = /home/joss/.ssh/allowed_signers
+[user]
+	email = josselin.demont@gmail.com
+	name = Joss
+[commit]
+	gpgsign = true
