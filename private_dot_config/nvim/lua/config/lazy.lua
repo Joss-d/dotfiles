@@ -50,4 +50,8 @@ require("lazy").setup({
       },
     },
   },
+  -- change this
+  -- git = {
+  --   url_format = "https://remotegithub.com/%s.git",
+  -- },
 })
