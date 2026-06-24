@@ -3,3 +3,4 @@
 -- Add any additional options here
 vim.opt.relativenumber = false
 vim.g.snacks_animate = false
+-- vim.g.python3_host_prog = "/urs/bin/python3.12"
