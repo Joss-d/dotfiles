@@ -106,10 +106,13 @@ pathadd() {
   fi
 }
 
-if [[ $(cat /etc/*release* | grep "^ID=") == *"bazzite" ]]; then
+_os=$(cat /etc/*release* | grep "^ID=")
+if [[ $_os == *"bazzite" ]] || [[ $_os == *"debian" ]]; then
   pathadd "/opt/nvim-linux-x86_64/bin"
   pathadd "/opt/chezmoi/bin"
   pathadd "/home/linuxbrew/.linuxbrew/bin"
+fi
+if [[ $_os == *"bazzite" ]]; then
   HOME=/var/home/joss
 fi
 pathadd "$HOME/.local/bin"
