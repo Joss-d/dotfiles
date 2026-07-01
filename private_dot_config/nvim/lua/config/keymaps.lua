@@ -4,3 +4,5 @@
 
 vim.keymap.set("n", "<tab>", "<cmd>bnext<cr>")
 vim.keymap.set("n", "<S-tab>", "<cmd>bprevious<cr>")
+vim.keymap.set("n", "<leader>cb", "<cmd>CMakeBuild<cr>")
+vim.keymap.set("n", "<leader>ct", "<cmd>CMakeRunTest<cr>")

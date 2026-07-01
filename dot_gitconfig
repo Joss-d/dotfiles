@@ -1,7 +1,7 @@
 [gpg]
-	format = ssh
+	format = gpg
 [commit]
 	gpgsign = true
-; contains [user]<signingkey, email, name>, [gpg "ssh"]allowedSignersFile
+; contains [user]<signingkey, email, name>
 [include]
   path = ~/.my_git_config
