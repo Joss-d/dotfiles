@@ -16,8 +16,11 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTCONTROL=ignoredups
+# Combine multiline commands into one in history
+shopt -s cmdhist
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -99,7 +102,7 @@ txtrst="\[\e[0m\]"    # Text Reset
 returncode="if [ \$? = 0 ]; then echo \"${bldgrn}>\"; else echo \"${bldred}>\"; fi"
 
 # PS1="${txtblu}\u (\W)${txtpur}"'$(__git_ps1)'" ${bldred}>${txtrst} "
-PS1="${txtblu}\u (\W)${txtpur}"'$(__git_ps1)'" \`${returncode}\`${txtrst} "
+PS1="${txtcyn}\u (\W)${txtpur}"'$(__git_ps1)'" \`${returncode}\`${txtrst} "
 
 pathadd() {
   if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
@@ -141,4 +144,26 @@ function kc() {
   # Assuming only one gpg key
   gpgkey=$(gpg --list-secret-keys --keyid-format=long | grep sec | awk -F'/' '{print $2}' | awk '{print $1}')
   eval $(keychain --nogui --eval --agents ssh,gpg --quick ~/.ssh/id_ed25519 ${gpgkey})
+}
+
+extract() { # extract files. Ignore files with improper extensions.
+  local x
+  ee() { # echo and execute
+    echo "$@"
+    $1 "$2"
+  }
+  for x in "$@"; do
+    [[ -f $x ]] || continue
+    case "$x" in
+    *.tar.bz2 | *.tbz2) ee "tar xvjf" "$x" ;;
+    *.tar.gz | *.tgz) ee "tar xvzf" "$x" ;;
+    *.bz2) ee "bunzip2" "$x" ;;
+    *.rar) ee "unrar x" "$x" ;;
+    *.gz) ee "gunzip" "$x" ;;
+    *.tar) ee "tar xvf" "$x" ;;
+    *.zip) ee "unzip" "$x" ;;
+    *.Z) ee "uncompress" "$x" ;;
+    *.7z) ee "7z x" "$x" ;;
+    esac
+  done
 }
