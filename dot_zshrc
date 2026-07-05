@@ -93,6 +93,12 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   you-should-use
+  wd
+  ansible
+  command-not-found
+  extract
+  podman
+  zsh-interactive-cd
   )
 
 path+=("/opt/nvim-linux-x86_64/bin")
