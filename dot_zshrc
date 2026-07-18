@@ -146,7 +146,7 @@ bindkey '^[[B' down-line-or-search
 function kc() {
   # Assuming only one gpg key
   gpgkey=$(gpg --list-secret-keys --keyid-format=long | grep sec | awk -F'/' '{print $2}' | awk '{print $1}')
-  eval $(keychain --nogui --eval --agents ssh,gpg --quick ~/.ssh/id_ed25519 ${gpgkey})
+  eval $(keychain --nogui --eval --agents ssh,gpg ~/.ssh/id_ed25519 ${gpgkey} --timeout 240)
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
