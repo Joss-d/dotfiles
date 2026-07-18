@@ -20,7 +20,10 @@ install fd-find
 install ripgrep
 install lazygit
 install fzf
-wl-clipboard
+
+# Clipboard : 
+install tmux
+# install wl-clipboard
 ```
 
 ## Git stuff
