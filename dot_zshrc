@@ -68,7 +68,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -79,26 +79,28 @@ HIST_STAMPS="dd/mm/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  chezmoi
-  python
-  uv
-  colorize
-  rclone
-  # ssh-agent
-  gpg-agent
-  # keychain
-  virtualenvwrapper
   aliases
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-  you-should-use
-  wd
   ansible
+  chezmoi
+  colorize
   command-not-found
   extract
+  git
+  gpg-agent
+  # ssh-agent
+  # keychain
   podman
+  python
+  rclone
+  uv
+  virtualenvwrapper
+  wd
   zsh-interactive-cd
+  z
+  # externals
+  you-should-use
+  zsh-autosuggestions
+  zsh-syntax-highlighting
   )
 
 path+=("/opt/nvim-linux-x86_64/bin")
@@ -106,11 +108,9 @@ path+=("/opt/bin")
 path+=("$HOME/.local/bin")
 export PATH
 
-# zstyle :omz:plugins:ssh-agent identities id_ed25519
-# zstyle :omz:plugins:ssh-agent lazy yes
-# zstyle :omz:plugins:ssh-agent quiet yes
-# zstyle :omz:plugins:keychain identities FE5D8522B9AFADF92074FFE9B02D176C578DC59E
-# zstyle :omz:plugins:keychain options --quiet
+# zstyle :omz:plugins:keychain agents gpg,ssh
+# zstyle :omz:plugins:ssh-agent identities id_ed25519 FE5D8522B9AFADF92074FFE9B02D176C578DC59E
+# zstyle :omz:plugins:keychain options --timeout 240 --quiet
 
 source $ZSH/oh-my-zsh.sh
 
