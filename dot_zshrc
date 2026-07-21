@@ -111,10 +111,10 @@ path+=("/opt/bin")
 path+=("$HOME/.local/bin")
 export PATH
 
-export ZSH_TMUX_AUTOSTART=true
-export ZSH_TMUX_AUTOSTART_ONCE=false
-export ZSH_TMUX_AUTOCONNECT=true
-export ZSH_TMUX_AUTOQUIT=true
+# export ZSH_TMUX_AUTOSTART=true
+# export ZSH_TMUX_AUTOSTART_ONCE=false
+# export ZSH_TMUX_AUTOCONNECT=true
+# export ZSH_TMUX_AUTOQUIT=true
 
 # zstyle :omz:plugins:keychain agents gpg,ssh
 # zstyle :omz:plugins:ssh-agent identities id_ed25519 FE5D8522B9AFADF92074FFE9B02D176C578DC59E
@@ -155,6 +155,12 @@ function kc() {
   # Assuming only one gpg key
   gpgkey=$(gpg --list-secret-keys --keyid-format=long | grep sec | awk -F'/' '{print $2}' | awk '{print $1}')
   eval $(keychain --nogui --eval --agents ssh,gpg ~/.ssh/id_ed25519 ${gpgkey} --timeout 240)
+}
+
+function keys()
+{
+  echo test | gpg --clear-sign &> /dev/null
+  ssh-add ~/.ssh/id_ed25519
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

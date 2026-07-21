@@ -1,3 +1,0 @@
-# Assuming only one gpg key
-gpgkey=$(gpg --list-secret-keys --keyid-format=long | grep sec | awk -F'/' '{print $2}' | awk '{print $1}')
-eval $(keychain --nogui --eval --agents ssh,gpg ~/.ssh/id_ed25519 ${gpgkey} --timeout 240)
