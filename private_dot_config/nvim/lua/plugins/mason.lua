@@ -1,7 +1,6 @@
 return {
   "mason-org/mason.nvim",
   opts = {
-    ensure_installed = { "gitui" },
     -- github = {
     --   download_url_template = https://TODO/remote-github/%s/releases/download/%s/%s,
     -- },
@@ -13,22 +12,6 @@ return {
     },
     registry_cache = {
       refresh = false,
-    },
-  },
-  keys = {
-    {
-      "<leader>gG",
-      function()
-        Snacks.terminal({ "gitui" })
-      end,
-      desc = "GitUi (cwd)",
-    },
-    {
-      "<leader>gg",
-      function()
-        Snacks.terminal({ "gitui" }, { cwd = LazyVim.root.get() })
-      end,
-      desc = "GitUi (Root Dir)",
     },
   },
   init = function()
