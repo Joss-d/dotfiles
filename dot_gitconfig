@@ -1,7 +1,7 @@
-[gpg]
-	format = gpg
+[tag]
+	gpgsign = true
 [commit]
 	gpgsign = true
-; contains [user]<signingkey, email, name>
 [include]
   path = ~/.my_git_config
+; contains [user]<signingkey, email, name>
