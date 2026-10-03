@@ -4,4 +4,6 @@
 	gpgsign = true
 [include]
   path = ~/.my_git_config
+[fetch]
+	prune = true
 ; contains [user]<signingkey, email, name>
