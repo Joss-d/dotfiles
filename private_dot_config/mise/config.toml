@@ -1,6 +1,7 @@
 [tools]
 atuin = "latest"
 bat = "latest"
+broot = "latest"
 chezmoi = "latest"
 copier = "latest"
 dive = "latest"
@@ -19,3 +20,4 @@ starship = "latest"
 tree-sitter = "latest"
 uv = "latest"
 zellij = "latest"
+zoxide = "latest"

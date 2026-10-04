@@ -17,7 +17,7 @@ sudo apt install zsh curl wget unzip
 chsh -s /bin/zsh
 curl https://mise.run | sh
 ~/.local/bin/mise exec chezmoi@latest -- chezmoi init https://github.com/Joss-d/dotfiles.git
-/home/joss/.local/bin/mise exec chezmoi@latest -- chezmoi apply -v
+~/.local/bin/mise exec chezmoi@latest -- chezmoi apply -v
 
 mkdir ~/.local/share/font
 wget -O ~/.local/share/fonts/ https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/JetBrainsMono.zip
@@ -27,6 +27,7 @@ cd ~/.local/share/fonts/ && unzip JetBrainsMono.zip && cd -
 ## zsh
 
 ```console
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
@@ -70,7 +71,7 @@ x = 12
 y = 12
 
 [font]
-size = 13.0
+size = 11.0
 
 [cursor]
 style = { shape = "Block", blinking = "On" }
