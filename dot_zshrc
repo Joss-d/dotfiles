@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -86,13 +79,10 @@ plugins=(
   extract
   git
   gpg-agent
-  # ssh-agent
-  # keychain
   podman
   python
   rclone
   sudo
-  wd
   zsh-interactive-cd
   # externals
   you-should-use
@@ -100,19 +90,8 @@ plugins=(
   zsh-syntax-highlighting
   )
 
-path+=("/opt/nvim-linux-x86_64/bin")
-path+=("/opt/bin")
 path+=("$HOME/.local/bin")
 export PATH
-
-# export ZSH_TMUX_AUTOSTART=true
-# export ZSH_TMUX_AUTOSTART_ONCE=false
-# export ZSH_TMUX_AUTOCONNECT=true
-# export ZSH_TMUX_AUTOQUIT=true
-
-# zstyle :omz:plugins:keychain agents gpg,ssh
-# zstyle :omz:plugins:ssh-agent identities id_ed25519 FE5D8522B9AFADF92074FFE9B02D176C578DC59E
-# zstyle :omz:plugins:keychain options --timeout 240 --quiet
 
 source $ZSH/oh-my-zsh.sh
 
@@ -147,9 +126,6 @@ alias zn="zellij -s"
 alias za="zellij attach"
 alias zl="zellij list-sessions"
 alias zka="zellij delete-all-sessions"
-
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
 
 function kc() {
   # Assuming only one gpg key

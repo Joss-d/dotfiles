@@ -13,8 +13,7 @@
 ## Init
 
 ```console
-sudo apt install zsh curl wget unzip
-chsh -s /bin/zsh
+sudo apt install curl wget unzip
 curl https://mise.run | sh
 ~/.local/bin/mise exec chezmoi@latest -- chezmoi init https://github.com/Joss-d/dotfiles.git
 ~/.local/bin/mise exec chezmoi@latest -- chezmoi apply -v
@@ -24,7 +23,26 @@ wget -O ~/.local/share/fonts/ https://github.com/ryanoasis/nerd-fonts/releases/d
 cd ~/.local/share/fonts/ && unzip JetBrainsMono.zip && cd -
 ```
 
-## zsh
+### Fish
+
+```console
+sudo apt install fish
+chsh -s $(command -v fish)
+```
+
+### zsh
+
+```console
+sudo apt install zsh 
+chsh -s /bin/zsh
+curl https://mise.run | sh
+~/.local/bin/mise exec chezmoi@latest -- chezmoi init https://github.com/Joss-d/dotfiles.git
+~/.local/bin/mise exec chezmoi@latest -- chezmoi apply -v
+
+#mkdir ~/.local/share/font
+#wget -O ~/.local/share/fonts/ https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/JetBrainsMono.zip
+#cd ~/.local/share/fonts/ && unzip JetBrainsMono.zip && cd -
+```
 
 ```console
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
