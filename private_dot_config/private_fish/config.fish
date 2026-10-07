@@ -22,8 +22,3 @@ alias zn="zellij -s"
 alias za="zellij attach"
 alias zl="zellij list-sessions"
 alias zka="zellij delete-all-sessions"
-
-function keys
-    echo test | gpg --clear-sign &>/dev/null
-    ssh-add ~/.ssh/id_ed25519
-end
