@@ -1,0 +1,10 @@
+[registries.crates-io]
+protocol = "sparse"
+
+[net]
+git-fetch-with-cli = true
+
+# if proxy ?
+# [http]
+# proxy = "http://proxy:port"
+# multiplexing = false
