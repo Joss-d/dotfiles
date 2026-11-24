@@ -3,7 +3,9 @@
 <!--toc:start-->
 - [dotfiles](#dotfiles)
   - [Init](#init)
-  - [zsh](#zsh)
+    - [Fish](#fish)
+    - [zsh](#zsh)
+  - [Fonts](#fonts)
   - [Neovim stuff](#neovim-stuff)
     - [Install](#install)
   - [Git stuff](#git-stuff)
@@ -15,12 +17,8 @@
 ```console
 sudo apt install curl wget unzip
 curl https://mise.run | sh
-~/.local/bin/mise exec chezmoi@latest -- chezmoi init https://github.com/Joss-d/dotfiles.git
-~/.local/bin/mise exec chezmoi@latest -- chezmoi apply -v
-
-mkdir ~/.local/share/font
-wget -O ~/.local/share/fonts/ https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/JetBrainsMono.zip
-cd ~/.local/share/fonts/ && unzip JetBrainsMono.zip && cd -
+mise exec chezmoi@latest -- chezmoi init https://github.com/Joss-d/dotfiles.git
+mise exec chezmoi@latest -- chezmoi apply -v
 ```
 
 ### Fish
@@ -34,14 +32,7 @@ chsh -s $(command -v fish)
 
 ```console
 sudo apt install zsh 
-chsh -s /bin/zsh
-curl https://mise.run | sh
-~/.local/bin/mise exec chezmoi@latest -- chezmoi init https://github.com/Joss-d/dotfiles.git
-~/.local/bin/mise exec chezmoi@latest -- chezmoi apply -v
-
-#mkdir ~/.local/share/font
-#wget -O ~/.local/share/fonts/ https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/JetBrainsMono.zip
-#cd ~/.local/share/fonts/ && unzip JetBrainsMono.zip && cd -
+chsh -s $(command -v zsh)
 ```
 
 ```console
@@ -51,6 +42,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
 uv tool install pygments
 ```
+
+## Fonts
+
+[JetBrainsMono]<https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/JetBrainsMono.zip>
 
 ## Neovim stuff
 

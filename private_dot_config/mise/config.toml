@@ -24,3 +24,18 @@ tree-sitter = "latest"
 uv = "latest"
 zellij = "latest"
 zoxide = "latest"
+
+[tasks.chezmoi]
+description = "Init chezmoi"
+run = [
+  "mise exec chezmoi@latest -- chezmoi init https://github.com/Joss-d/dotfiles.git",
+  "mise exec chezmoi@latest -- chezmoi apply -v",
+]
+
+[tasks.fish]
+description = "Switch to fish"
+run = ["sudo apt install fish", "chsh -s $(command -v fish)"]
+
+[tasks.zsh]
+description = "Switch to zsh"
+run = ["sudo apt install zsh", "chsh -s $(command -v zsh)"]
