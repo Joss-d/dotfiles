@@ -4,6 +4,8 @@
 	gpgsign = true
 [include]
   path = ~/.my_git_config
+; contains [user]<signingkey, email, name>
 [fetch]
 	prune = true
-; contains [user]<signingkey, email, name>
+[gpg]
+	format = ssh

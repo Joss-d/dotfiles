@@ -5,7 +5,7 @@
   - [Init](#init)
     - [Fish](#fish)
     - [zsh](#zsh)
-  - [Fonts](#fonts)
+  - [Fonts/themes](#fontsthemes)
   - [Neovim stuff](#neovim-stuff)
     - [Install](#install)
   - [Git stuff](#git-stuff)
@@ -43,9 +43,10 @@ git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/
 uv tool install pygments
 ```
 
-## Fonts
+## Fonts/themes
 
-[JetBrainsMono]<https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/JetBrainsMono.zip>
+[JetBrainsMono](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/JetBrainsMono.zip)
+[Catppuccin-mocha](https://github.com/catppuccin/alacritty/blob/main/catppuccin-mocha.toml)
 
 ## Neovim stuff
 
@@ -92,9 +93,7 @@ style = { shape = "Block", blinking = "On" }
 [font.normal]
 family = "JetBrainsMono NFM"
 style = "Regular"
-# https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/JetBrainsMono.zip
 
 [general]
 import = ["./catppuccin_mocha.toml"]
-# https://github.com/catppuccin/alacritty/blob/main/catppuccin-mocha.toml
 ```
